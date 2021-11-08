@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from redis import Redis
 
 application = Flask(__name__)
-redis = Redis(host='redis', port=6379)
+redis = Redis(host='redis', port=5000)
 redis.set('yes', 0)
 redis.set('no', 0)
 redis.set('no_one', 0)
