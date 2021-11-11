@@ -7,5 +7,6 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 COPY simpleapp /flaskapp
 WORKDIR /flaskapp
 RUN pip3 install -r requirements.txt
+RUN chmod +x startup.sh
 EXPOSE 5000
 ENTRYPOINT "./startup.sh"
