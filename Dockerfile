@@ -4,8 +4,7 @@ RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y install python3 python3-setuptools python3-pip gunicorn3
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
-RUN source venv/bin/activate
 WORKDIR /simpleapp
-RUN pip freeze > requirements.txt
+RUN pip install -r /simpleapp/requirements.txt
 EXPOSE 5000
 ENTRYPOINT "./startup.sh"
